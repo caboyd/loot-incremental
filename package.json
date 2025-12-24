@@ -1,0 +1,65 @@
+{
+  "name": "profectus",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "testw": "vitest",
+    "serve": "vite preview --host",
+    "lint": "eslint src --max-warnings 0",
+    "lint:fix": "eslint --fix --max-warnings 0 src"
+  },
+  "dependencies": {
+    "@fontsource/material-icons": "^5.1.0",
+    "@fontsource/roboto-mono": "^5.1.0",
+    "@pixi/app": "^6.5.10",
+    "@pixi/constants": "~6.5.10",
+    "@pixi/core": "^6.5.10",
+    "@pixi/display": "~6.5.10",
+    "@pixi/math": "~6.5.10",
+    "@pixi/particle-emitter": "^5.0.7",
+    "@pixi/sprite": "~6.5.10",
+    "@pixi/ticker": "~6.5.10",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "is-plain-object": "^5.0.0",
+    "lz-string": "^1.5.0",
+    "nanoevents": "^9.0.0",
+    "unofficial-galaxy-sdk": "git+https://code.incremental.social/thepaperpilot/unofficial-galaxy-sdk.git#1.0.1",
+    "vite": "^5.1.8",
+    "vite-plugin-pwa": "^0.20.5",
+    "vite-tsconfig-paths": "^4.3.0",
+    "vue": "^3.5.13",
+    "vue-next-select": "^2.10.5",
+    "vue-panzoom": "https://github.com/thepaperpilot/vue-panzoom.git",
+    "vue-textarea-autosize": "^1.1.1",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vuedraggable": "^4.1.0"
+  },
+  "devDependencies": {
+    "@ivanv/vue-collapse-transition": "^1.0.2",
+    "@rushstack/eslint-patch": "^1.7.2",
+    "@types/lz-string": "^1.5.0",
+    "@types/node": "^22.7.6",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "eslint": "^8.57.0",
+    "jsdom": "^24.0.0",
+    "prettier": "^3.2.5",
+    "typescript": "~5.5.4",
+    "vitest": "^1.4.0",
+    "vue-tsc": "^2.0.6"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.24.0"
+  },
+  "engines": {
+    "node": "21.x"
+  }
+}
