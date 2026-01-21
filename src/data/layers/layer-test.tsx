@@ -22,7 +22,7 @@ import { createParticles } from "features/particles/particles";
 
 import { createAction } from "features/clickables/action";
 import Decimal from "util/bignum";
-import { nextTick, ref, unref } from "vue";
+import { ref, unref } from "vue";
 import { Texture } from "@pixi/core";
 import { Emitter } from "@pixi/particle-emitter";
 
