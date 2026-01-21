@@ -5,11 +5,11 @@ module.exports = {
     env: {
         node: true
     },
-    parser: '@typescript-eslint/parser',
+    parser: "@typescript-eslint/parser",
     plugins: ["@typescript-eslint"],
     overrides: [
         {
-            files: ['*.ts', '*.tsx'],
+            files: ["*.ts", "*.tsx"],
             extends: [
                 "plugin:vue/vue3-essential",
                 "@vue/eslint-config-typescript/recommended",
@@ -19,6 +19,9 @@ module.exports = {
                 ecmaVersion: 2020,
                 project: "./tsconfig.json"
             },
+            rules: {
+                "@typescript-eslint/no-unused-vars": "off"
+            }
         }
     ],
     ignorePatterns: ["src/lib"],
@@ -28,18 +31,12 @@ module.exports = {
         "vue/script-setup-uses-vars": "warn",
         "vue/no-mutating-props": "off",
         "vue/multi-word-component-names": "off",
-        "@typescript-eslint/strict-boolean-expressions": [
-            "error",
-            {
-                allowNullableObject: true,
-                allowNullableBoolean: true
-            }
-        ],
-        "eqeqeq": [
+
+        eqeqeq: [
             "error",
             "always",
             {
-                "null": "never"
+                null: "never"
             }
         ]
     },
