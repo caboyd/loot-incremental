@@ -7,7 +7,7 @@ import projInfo from "./src/data/projInfo.json";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "./",
+    base: "/loot-incremental/",
     build: {
         rollupOptions: {
             output: {

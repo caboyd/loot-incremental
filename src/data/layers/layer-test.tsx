@@ -58,7 +58,7 @@ const layer = createLayer(id, L => {
                         background: "none"
                     }}
                 >
-                    <img src="/assets/chest1.png" alt="Chest Icon" style={{ width: "64px" }} />
+                    <img src="./assets/chest1.png" alt="Chest Icon" style={{ width: "64px" }} />
                     <span
                         style={{
                             color: "white",
