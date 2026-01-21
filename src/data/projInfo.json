@@ -1,27 +1,27 @@
 {
-	"$schema": "./projInfo-schema.json",
+    "$schema": "./projInfo-schema.json",
 
-	"title": "Profectus",
-	"description": "A project made in Profectus",
-	"id": "",
-	"author": "",
-	"discordName": "",
-	"discordLink": "",
+    "title": "Loot Incremental",
+    "description": "Open Loot boxes to get more Loot",
+    "id": "loot-incremental-087b2596-b448-4610-8701-ee3c71843a78",
+    "author": "caboyd",
+    "discordName": "pile0",
+    "discordLink": "",
 
-	"versionNumber": "0.0",
-	"versionTitle": "Initial Commit",
+    "versionNumber": "0.0",
+    "versionTitle": "Initial Commit",
 
-	"allowGoBack": true,
-	"defaultShowSmall": false,
-	"defaultDecimalsShown": 2,
-	"useHeader": true,
-	"banner": null,
-	"logo": "",
-	"initialTabs": [ "main" ],
+    "allowGoBack": true,
+    "defaultShowSmall": false,
+    "defaultDecimalsShown": 2,
+    "useHeader": true,
+    "banner": null,
+    "logo": "",
+    "initialTabs": ["main"],
 
-	"maxTickLength": 3600,
-	"offlineLimit": 1,
-	"enablePausing": true,
-	"exportEncoding": "base64",
-	"disableHealthWarning": false
+    "maxTickLength": 3600,
+    "offlineLimit": 1,
+    "enablePausing": true,
+    "exportEncoding": "base64",
+    "disableHealthWarning": false
 }

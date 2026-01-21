@@ -11,6 +11,8 @@ import Decimal, { format, formatTime } from "util/bignum";
 import { render } from "util/vue";
 import { computed, toRaw } from "vue";
 import prestige from "./layers/prestige";
+import layerTest from "./layers/layer-test";
+import { createMultiplicativeModifier, createSequentialModifier } from "game/modifiers";
 
 /**
  * @hidden
@@ -23,8 +25,24 @@ export const main = createLayer("main", layer => {
     const pointGain = computed(() => {
         // eslint-disable-next-line prefer-const
         let gain = new Decimal(1);
+        gain = prestige_double_modifier.apply(gain) as Decimal;
+        gain = test_double_modifier.apply(gain) as Decimal;
         return gain;
     });
+
+    const prestige_double_modifier = createSequentialModifier(() => [
+        createMultiplicativeModifier(() => ({
+            multiplier: 2,
+            enabled: prestige.double_upgrade.bought
+        }))
+    ]);
+
+    const test_double_modifier = createSequentialModifier(() => [
+        createMultiplicativeModifier(() => ({
+            multiplier: 2,
+            enabled: layerTest.double_upgrade.bought
+        }))
+    ]);
     layer.on("update", diff => {
         points.value = Decimal.add(points.value, Decimal.times(pointGain.value, diff));
     });
@@ -32,7 +50,7 @@ export const main = createLayer("main", layer => {
 
     // Note: Casting as generic tree to avoid recursive type definitions
     const tree = createTree(() => ({
-        nodes: noPersist([[prestige.treeNode]]),
+        nodes: noPersist([[prestige.treeNode, layerTest.treeNode]]),
         branches: [],
         onReset() {
             points.value = toRaw(tree.resettingNode.value) === toRaw(prestige.treeNode) ? 0 : 10;
@@ -98,7 +116,7 @@ export const main = createLayer("main", layer => {
 export const getInitialLayers = (
     /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
     player: Partial<Player>
-): Array<Layer> => [main, prestige];
+): Array<Layer> => [main, prestige, layerTest];
 
 /**
  * A computed ref whose value is true whenever the game is over.

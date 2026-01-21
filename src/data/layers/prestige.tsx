@@ -14,12 +14,25 @@ import type { DecimalSource } from "util/bignum";
 import { render } from "util/vue";
 import { addTooltip } from "wrappers/tooltips/tooltip";
 import { createLayerTreeNode, createResetButton } from "../common";
+import { createUpgrade } from "features/clickables/upgrade";
+import { createCostRequirement } from "game/requirements";
+import { noPersist } from "game/persistence";
 
 const id = "p";
 const layer = createLayer(id, () => {
     const name = "Prestige";
     const color = "#4BDC13";
     const points = createResource<DecimalSource>(0, "prestige points");
+
+    const myUpgrade = createUpgrade(() => ({
+        requirements: createCostRequirement(() => ({
+            resource: noPersist(points),
+            cost: 1
+        })),
+        display: {
+            description: "Double points generation"
+        }
+    }));
 
     const conversion = createCumulativeConversion(() => ({
         formula: x => x.div(10).sqrt(),
@@ -58,10 +71,12 @@ const layer = createLayer(id, () => {
         color,
         points,
         tooltip,
+        double_upgrade: myUpgrade,
         display: () => (
             <>
                 <MainDisplay resource={points} color={color} />
                 {render(resetButton)}
+                {render(myUpgrade)}
             </>
         ),
         treeNode,
